@@ -1,0 +1,41 @@
+<main class="catalog">
+  <header class="catalog-header">
+    <div>
+      <p class="eyebrow">FAKE STORE API</p>
+      <h1>Productos</h1>
+      <p class="subtitle">Explora nuestro catálogo y encuentra tu próximo favorito.</p>
+    </div>
+    @if (!cargando() && !error()) {
+      <span class="product-count">{{ productos().length }} productos</span>
+    }
+  </header>
+
+  @if (cargando()) {
+    <p class="status" role="status">Cargando productos...</p>
+  } @else if (error()) {
+    <p class="status error" role="alert">{{ error() }}</p>
+  } @else {
+    <section class="product-grid" aria-label="Catálogo de productos">
+      @for (producto of productos(); track producto.id) {
+        <article class="product-card">
+          <div class="product-image">
+            <img [src]="producto.image" [alt]="producto.title" loading="lazy" />
+          </div>
+          <div class="product-info">
+            <p class="category">{{ producto.category }}</p>
+            <h2>{{ producto.title }}</h2>
+            <p class="description">{{ producto.description }}</p>
+            <div class="product-footer">
+              <span class="price">{{ producto.price | currency:'USD' }}</span>
+              <span class="rating" aria-label="Calificación y cantidad de reseñas">
+                ★ {{ producto.rating?.rate }} <span>({{ producto.rating?.count }})</span>
+              </span>
+            </div>
+          </div>
+        </article>
+      } @empty {
+        <p class="status">No hay productos disponibles.</p>
+      }
+    </section>
+  }
+</main>

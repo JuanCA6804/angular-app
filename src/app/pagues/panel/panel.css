@@ -1,0 +1,88 @@
+.crud-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.crud-container h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 26px;
+  color: #1f2937;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 0.75rem;
+}
+
+.tabla-productos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-productos th,
+.tabla-productos td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.tabla-productos th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+}
+
+.miniatura {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 2px;
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.btn-borrar {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.btn-borrar:hover {
+  background-color: #dc2626;
+}
+
+.btn-actualizar {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.btn-actualizar:hover {
+  background-color: #2563eb;
+}
+
+.text-center {
+  text-align: center;
+  color: #6b7280;
+  padding: 20px;
+}
